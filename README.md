@@ -1,1 +1,1 @@
-# go-program
+# Hello Go !
