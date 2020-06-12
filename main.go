@@ -1,22 +1,47 @@
 package main
 
 import (
-	"Comvita/morestrings"
-	"Comvita/untils"
 	"fmt"
-
-	"github.com/google/go-cmp/cmp"
+	//	"math"
+	"time"
+	//	"strings"
+	//	"Godemo/service"
+	//	"github.com/google/go-cmp/cmp"
 )
 
 func main() {
 
-	fmt.Println(cmp.Diff("Hello World", "Hello Go"))
+	defer fmt.Println("==================>defer world")
 
-	fmt.Println(morestrings.ReverseRunes("!oG ,olleH"))
+	today := time.Now().Weekday()
+	switch time.Saturday {
+		case today + 0:
+			fmt.Println(" Today.")
+		case today + 1:
+			fmt.Println(" Tomorrow.")
+		case today + 2:
+			fmt.Println(" In two days.")
+		default:
+			fmt.Println(" Too far away.")
+	}
 
-	fmt.Println(untils.CustomConcat("!oG ,olleH"))
+	/*sum := 1
+	for sum < 1000 {
+		sum += sum
+		if sum == 8 {
+			fmt.Printf("Break at %d", sum)
+			break
+		}
+	}
 
-	f := "apple" // var f string = "apple"
+	u, _ := split(12)
+	fmt.Println(u)*/
+
+	//fmt.Println(cmp.Diff("Hello World", "Hello Go"))
+
+	//fmt.Println(untils.CustomConcat("!oG ,olleH"))
+
+	/*f := "apple" // var f string = "apple"
 	fmt.Println(f)
 
 	b := []int{1, 2, 3, 4, 5}
@@ -66,14 +91,20 @@ func main() {
 
 	ff, one, two := vals(1, 2, 3)
 
-	fmt.Println(ff, one, two)
+	fmt.Println(ff, one, two)*/
+
 }
 
 func muldiv(n1 int, n2 int) (int, int) {
-	// returning the values
-	return n1 * n2, n1 / n2
+	return n1 * n2, n1 / n2 // returning the values
 }
 
 func vals(p1 int, p2 int, p3 int) (int, int, int) {
-	return p1*2, p2*3, p3*4
+	return p1 * 2, p2 * 3, p3 * 4
+}
+
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
 }
